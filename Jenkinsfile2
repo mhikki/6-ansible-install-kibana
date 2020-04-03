@@ -1,0 +1,12 @@
+node{
+  
+    stage('clone des fichier Ansible') {
+        checkout scm        
+    }
+   stage('Add Depo + install Elasticsearch') {
+         
+        sh 'ansible-playbook -i hosts playbook-DepoELK.yml'
+    }
+   
+}
+
