@@ -17,3 +17,5 @@
  		gpgcheck: yes
 		gpgkey: https://artifacts.elastic.co/GPG-KEY-elasticsearch
 
+     - name: installation Elasticsearch
+       yum: name elasticsearch
