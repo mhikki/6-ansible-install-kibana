@@ -1,0 +1,19 @@
+---
+ - hosts: webservers
+   user: jenkins
+   tasks: 
+   # - name : Verification service docker
+   #   service: name=docker state=started enabled= yes
+
+   #  - name : Installation wgett
+   #    yum: name=wget state=latest
+     - name :  Service Status
+       service: name=docker state=started
+     - name : Add Depo elasticsearch
+        yum_repository:
+            	name: Elasticsearch repository for 7.x packages
+    		description: Elasticsearch repository for 7.x packages
+   		baseurl: https://artifacts.elastic.co/packages/7.x/yum
+ 		gpgcheck: yes
+		gpgkey: https://artifacts.elastic.co/GPG-KEY-elasticsearch
+
